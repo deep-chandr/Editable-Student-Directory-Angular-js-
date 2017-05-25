@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+	  <head>
+			<title>project-intern</title>
+			<meta charset="utf-8">
+			<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+			 <script src = "controller_Machadalo_internship_angular.js"></script>
+			<style>
+				table{
+					background-color:#D8D8D8;
+					margin:0 auto;
+				}
+				td{
+					border:3px solid grey;
+					padding:5px;
+				}
+				#filter{
+					padding:50px;
+				}
+			</style>
+	  </head>
+	  <body  ng-app="project1" >
+	  <div ng-controller="ctrl" ng-init="names=[{name:'Student1',age:20,gender:'Male',		markE:mark1a, markH:mark1b, total:0 , average:0},
+											 {name:'Student2',age:15,gender:'Female',	markE:mark2a, markH:mark2b, total:0 , average:0},
+											 {name:'Student3',age:22,gender:'Male',		markE:mark3a, markH:mark3b, total:0 , average:0},
+											 {name:'Student4',age:19,gender:'Female',	markE:mark4a, markH:mark4b, total:0 , average:0},
+											 {name:'Student5',age:23,gender:'Female',	markE:mark5a, markH:mark5b, total:0 , average:0},
+											 {name:'Student6',age:18,gender:'Male',		markE:mark6a, markH:mark6b, total:0 , average:0},
+											 ]">
+				
+				<center><h3>Machadalo Angular Assignment</h3></center>							 
+				<div id="filter"><center>
+				Sort By: <select ng-model="sort">
+							<option value="name">Name</option>
+							<option value="gender">Gender</option>
+							<option value="-markE">Marks in English(In Descending order)</option>
+							<option value="-markH">Marks in Hindi(In Descending order)</option>
+							<option value="-average">Average(In Descending order)</option>
+						</select>
+				</center></div>
+		  
+				
+					<table>
+						<thead style="background-color:#FBFEED">
+							<tr>
+								<td>Name</td>
+								<td>Age</td>
+								<td>Gender</td>
+								<td>Marks In English</td>
+								<td>Marks In Hindi</td>
+								<td>Total</td>
+								<td>Average</td>
+								<td>Remove</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="x in names | orderBy:sort">
+								<td>{{x.name}}</td>
+								<td>{{x.age}}</td>
+								<td>{{x.gender}}</td>
+								<td><input type="number" min=0 max=100 ng-model="x.markE"></td>
+								<td><input type="number" min=0 max=100 ng-model="x.markH"></td>
+								<td><span ng-bind="x.total=x.markE+x.markH"></span> </td>
+								<td><span ng-bind="x.average=(x.markE+x.markH)/2"></span></td>
+								<td><input type="button" value="Remove"  ng-click="removeRow(x.name)"/></td>
+							</tr>
+						</tbody>
+					</table>
+					
+					<center>
+						<h2>		Highest in english: {{highestInEnglish()}}
+						<br><br>	Highest in hindi: {{highestInHindi()}}
+						<br><br>	Maximum average: {{highestInAverage()}}
+						</h2>
+					</center>
+					
+	  </div>
+
+	 </body>
+</html>
