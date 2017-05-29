@@ -1,12 +1,9 @@
 var myapp=angular.module("project1",[])
 					.controller("ctrl",function($scope){
-					  
 						var createRandom=function(){
 							var x;
 							x=  Math.floor(Math.random()*100);
 							return x;
-							
-							 
 						}
 						$scope.mark1a=createRandom();
 						$scope.mark1b=createRandom();
@@ -20,9 +17,15 @@ var myapp=angular.module("project1",[])
 						$scope.mark5b=createRandom();
 						$scope.mark6a=createRandom();
 						$scope.mark6b=createRandom();
+						$scope.mark7a=createRandom();
+						$scope.mark7b=createRandom();
+						$scope.mark8a=createRandom();
+						$scope.mark8b=createRandom();
+						$scope.mark9a=createRandom();
+						$scope.mark9b=createRandom();
 						
 						$scope.sort="name";
-							
+								
 								$scope.removeRow = function(name){
 									  var index = -1;
 									  var comArr = eval( $scope.names );
@@ -39,21 +42,22 @@ var myapp=angular.module("project1",[])
 							   };
 							   
 							   
-							   $scope.highestInEnglish = function(name){
-									  var index = -1;
+							   $scope.highestInEnglish = function(){
+									  var index = 0;
 									  var comArr = eval( $scope.names );
 									  var max= comArr[0].markE;
 									  
-									  for( var i = 1; i < comArr.length; i++ ) {
+									 for( var i = 1; i < comArr.length; i++ ) {
 											 if( max < comArr[i].markE ){
 												 max = comArr[i].markE;
 												 index=i;
 											 }
 									  }
 									 return $scope.names[index].name;
+									 
 							   };
-							   $scope.highestInHindi = function(name){
-									  var index = -1;
+							   $scope.highestInHindi = function(){
+									  var index = 0;
 									  var comArr = eval( $scope.names );
 									  var max= comArr[0].markH;
 									  
@@ -66,8 +70,8 @@ var myapp=angular.module("project1",[])
 									 return $scope.names[index].name;
 							   };
 							   
-							   $scope.highestInAverage = function(name){
-									  var index = -1;
+							   $scope.highestInAverage = function(){
+									  var index = 0;
 									  var comArr = eval( $scope.names );
 									  var max= comArr[0].average;
 									  
