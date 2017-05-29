@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	  <head>
-			<title>project-intern</title>
+			<title>Project</title>
 			<meta charset="utf-8">
 			<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 			 <script src = "controller_Machadalo_internship_angular.js"></script>
@@ -17,16 +17,20 @@
 				#filter{
 					padding:50px;
 				}
+				
 			</style>
 	  </head>
 	  <body  ng-app="project1" >
-	  <div ng-controller="ctrl" ng-init="names=[{name:'Student1',age:20,gender:'Male',		markE:mark1a, markH:mark1b, total:0 , average:0},
-											 {name:'Student2',age:15,gender:'Female',	markE:mark2a, markH:mark2b, total:0 , average:0},
-											 {name:'Student3',age:22,gender:'Male',		markE:mark3a, markH:mark3b, total:0 , average:0},
-											 {name:'Student4',age:19,gender:'Female',	markE:mark4a, markH:mark4b, total:0 , average:0},
-											 {name:'Student5',age:23,gender:'Female',	markE:mark5a, markH:mark5b, total:0 , average:0},
-											 {name:'Student6',age:18,gender:'Male',		markE:mark6a, markH:mark6b, total:0 , average:0},
-											 ]">
+	  <div ng-controller="ctrl" ng-init="names=[{name:'Student 1',age:20,gender:'Male',	markE:mark1a, markH:mark1b, total:0 , average:0},
+											 {name:'Student 2',age:15,gender:'Female',	markE:mark2a, markH:mark2b, total:0 , average:0},
+											 {name:'Student 3',age:22,gender:'Male',	markE:mark3a, markH:mark3b, total:0 , average:0},
+											 {name:'Student 4',age:19,gender:'Female',	markE:mark4a, markH:mark4b, total:0 , average:0},
+											 {name:'Student 5',age:23,gender:'Female',	markE:mark5a, markH:mark5b, total:0 , average:0},
+											 {name:'Student 6',age:18,gender:'Male',	markE:mark6a, markH:mark6b, total:0 , average:0},
+											 {name:'Student 7',age:20,gender:'Male',	markE:mark7a, markH:mark7b, total:0 , average:0},
+											 {name:'Student 8',age:21,gender:'Female',	markE:mark8a, markH:mark8b, total:0 , average:0},
+											 {name:'Student 9',age:17,gender:'Female',	markE:mark9a, markH:mark9b, total:0 , average:0},
+											 ];">
 				
 				<center><h3>Machadalo Angular Assignment</h3></center>							 
 				<div id="filter"><center>
@@ -66,13 +70,14 @@
 							</tr>
 						</tbody>
 					</table>
-					
-					<center>
-						<h2>		Highest in english: {{highestInEnglish()}}
-						<br><br>	Highest in hindi: {{highestInHindi()}}
-						<br><br>	Maximum average: {{highestInAverage()}}
-						</h2>
-					</center>
+					<div ng-show="names.length" id ="analysis">
+						<center>
+							<h2>		Highest in english:<span ng-bind="highestInEnglish()"></span>
+							<br><br>	Highest in hindi:<span ng-bind="highestInHindi()"></span>
+							<br><br>	Maximum average:<span ng-bind="highestInAverage()"></span>
+							</h2>
+						</center>
+					</div>
 					
 	  </div>
 
